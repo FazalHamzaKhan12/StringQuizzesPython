@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python String Slicing Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 700px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #303f9f;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Python String Slicing Quiz</h2>
+
+        <div class="question">
+            <p><b>Q1:</b> What will be the output of <code>print("abcdef"[2:5])</code>?</p>
+            <div class="options">
+                <input type="radio" name="q1" value="a"> a) "abc"<br>
+                <input type="radio" name="q1" value="b"> b) "cde"<br>
+                <input type="radio" name="q1" value="c"> c) "def"<br>
+                <input type="radio" name="q1" value="d"> d) Error<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><b>Q2:</b> What does <code>"123456789"[::3]</code> return?</p>
+            <div class="options">
+                <input type="radio" name="q2" value="a"> a) "147"<br>
+                <input type="radio" name="q2" value="b"> b) "123456"<br>
+                <input type="radio" name="q2" value="c"> c) "369"<br>
+                <input type="radio" name="q2" value="d"> d) "13579"<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><b>Q3:</b> What is the output of <code>print("hello world"[::-1])</code>?</p>
+            <div class="options">
+                <input type="radio" name="q3" value="a"> a) "dlrow olleh"<br>
+                <input type="radio" name="q3" value="b"> b) "hello world"<br>
+                <input type="radio" name="q3" value="c"> c) "world hello"<br>
+                <input type="radio" name="q3" value="d"> d) Error<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><b>Q4:</b> What is the result of <code>"abcdef"[1:5:2]</code>?</p>
+            <div class="options">
+                <input type="radio" name="q4" value="a"> a) "bd"<br>
+                <input type="radio" name="q4" value="b"> b) "be"<br>
+                <input type="radio" name="q4" value="c"> c) "bcde"<br>
+                <input type="radio" name="q4" value="d"> d) "bdf"<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><b>Q5:</b> What will <code>"Python Programming"[::2]</code> return?</p>
+            <div class="options">
+                <input type="radio" name="q5" value="a"> a) "Pto rgamn"<br>
+                <input type="radio" name="q5" value="b"> b) "PythonProgramming"<br>
+                <input type="radio" name="q5" value="c"> c) "yhnPormig"<br>
+                <input type="radio" name="q5" value="d"> d) Error<br>
+            </div>
+        </div>
+
+        <button onclick="checkAnswers()">Submit</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let answers = {
+                q1: "b", q2: "a", q3: "a", q4: "a", q5: "a"
+            };
+
+            let score = Object.keys(answers).filter(q => 
+                document.querySelector('input[name="'+q+'"]:checked')?.value === answers[q]
+            ).length;
+
+            document.getElementById("result").innerHTML = "You scored " + score + " out of 5!";
+        }
+    </script>
+</body>
+</html>
